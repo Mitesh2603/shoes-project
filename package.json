@@ -11,7 +11,11 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "@rushstack/eslint-patch": "^1.1.0",
+    "@types/d3": "^7.4.0",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.11.41",
     "@vitejs/plugin-vue": "^2.3.3",
@@ -36,8 +40,9 @@
     "vite": "^2.9.12",
     "vitest": "^0.15.1",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.1",
-    "vue-tsc": "^0.38.1"
+    "vue-router": "^4.1.2",
+    "vue-tsc": "^0.38.1",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "tailwindcss": "^3.1.4"

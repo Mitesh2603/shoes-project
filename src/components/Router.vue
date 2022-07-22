@@ -34,14 +34,19 @@ export default {
 </template> -->
 
 <template>
-  <h1>Nested Names Views</h1>
-  <router-view></router-view>
-  <!-- <ul>
+  <!-- <router-link to="/settings">Nested Names Views</router-link>
+  <router-view v-slot="{ Component }">
+  <transition name="fade">
+    <component :is="Component" />
+  </transition> -->
+<!-- </router-view> -->
+  <ul>
     <li>
-      <router-link class="border-solid border-2 border-black p-1 inline-block rounded-2xl" to="/user/eduardo/post/1">Users : 1</router-link>
-      <router-link class="border-solid border-2 border-black p-1 inline-block rounded-2xl" to="/user/eduardo/post/20">Users : 2</router-link>
+      <router-link class="border-solid border-2 border-black p-1 inline-block rounded-2xl" to="/user/Mitesh/post/25">Users : 1</router-link>
+      <!-- <router-link class="border-solid border-2 border-black p-1 inline-block rounded-2xl" :to="{name:'user', params:{username: 'mitesh'}}">Users : 1/5</router-link> -->
+      <router-link class="border-solid border-2 border-black p-1 inline-block rounded-2xl" to="/user/eduardo/post/200">Users : 2</router-link>
     </li><br/>
-    <li>
+    <!-- <li>
       <router-link to="/pathMatch" replace>Path Match</router-link>
     </li>
     <li>
@@ -49,14 +54,17 @@ export default {
     </li>
     <li>
       <router-link to="/about/contactInfo">Contact Info</router-link>
-    </li>
+    </li> -->
   </ul>
   <router-view class="view one"></router-view>
-  <router-view class="view two" name="a"></router-view>
+  <!-- <router-view class="view two" name="a"></router-view>
   <router-view class="view three" name="b"></router-view> -->
 </template>
 
 <script lang="ts">
+// import { router } from "@/router";
+// import { createRouter } from "vue-router";
+
 export default {
   name: "App",
 };
