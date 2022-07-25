@@ -11,54 +11,63 @@ import ContactInfo from "./views/contactInfo.vue";
 export const router = createRouter({
   // router.push(`user/${username}`),
   history: createWebHistory(),
-  routes: [
-    {
-      path: "/settings",
-      component: UserSettings,
-      children: [
-        {
-          path: "emails",
-          component: UserEmailSubscription,
-        },
-        {
-          path: "profile",
-          components: {
-            path: UserProfile,
-            helper: UserProfilePreview,
-          },
-        },
-      ],
-    },
-  ],
-  // Router.push({path: '/pathmatch', component: NotFound}),
   // routes: [
   //   {
-  //     path: "/user/eduardo/post/1",
-  //     components: {
-  //       default: NotFound,
-  //       a: About,
-  //       b: ContactInfo,
-  //     },
+  //     path: "/settings",
+  //     name:"settings",
+  //     // beforeEnter:["emails"],
+  //     component: UserSettings,
+  //     children: [
+  //       {
+  //         path: "emails",
+  //         component: UserEmailSubscription,
+  //       },
+  //       {
+  //         path: "profile",
+  //         components: {
+  //           path: UserProfile,
+  //           helper: UserProfilePreview,
+  //         },
+  //       },
+  //     ],
   //   },
-  //   {
-  //     path: "/user/eduardo/post/20",
-  //     components: {
-  //       default: ContactInfo,
-  //       a: About,
-  //       b: NotFound,
-  //     },
-  //   },
-  // { path: "/user/:username/post/:posts", component: userPost },
-  // { path: "/:pathMatch", name: "NotFound", component: NotFound },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   component: About,
-  //   sensitive: true,
-  //   children: [
-  //     { path: "contactInfo", name: "contactInfo", component: ContactInfo },
-  //   ],
-  // },
-  //   ],
-  //   strict: true,
+  // ],
+  // Router.push({path: '/pathmatch', component: NotFound}),
+  routes: [
+    // {
+    //   path: "/user/eduardo/post/1",
+    //   components: {
+    //     default: NotFound,
+    //     a: About,
+    //     b: ContactInfo,
+    //   },
+    // },
+    // {
+    //   path: "/user/eduardo/post/20",
+    //   components: {
+    //     default: ContactInfo,
+    //     a: About,
+    //     b: NotFound,
+    //   },
+    // },
+    {
+      path: "/user/:username/post/:posts",
+      component: userPost,
+      name: "user",
+      // props: (route) => ({ query: route.query.q }),
+    },
+    // { path: "/:pathMatch", name: "NotFound", component: NotFound },
+    // {
+    //   path: "/about",
+    //   name: "About",
+    //   component: About,
+    //   sensitive: true,
+    //   children: [
+    //     { path: "contactInfo", name: "contactInfo", component: ContactInfo },
+    //   ],
+    // },
+  ],
+  // strict: true,
 });
+// router.addRoute({ path: '/about', component: About })
+router.beforeEach((to, from) => {});
